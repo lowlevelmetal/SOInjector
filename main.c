@@ -1,4 +1,4 @@
-#include <proc.h>
+#include "proc.h"
 
 /*
  * injectSharedLibrary()
@@ -123,7 +123,7 @@ int main(MAIN_ARGS) { UNUSED_MAIN_ARGS;
 
     // Get pids
     pid_t target_pid = find_pid(argv[1]);
-    pid_t this_pid   = find_pid("main");
+    pid_t this_pid   = find_pid("injector");
 
     if(!target_pid || !this_pid) {
         fprintf(stderr, "Failed to locate pids!\n");
